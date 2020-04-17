@@ -8,12 +8,14 @@
 def find_min_in_nested_arrays(src)
   results = Array.new
   row_index = 0
-  low = 0
   while row_index < src.count do
     element_index = 0
+    low = 0
     while element_index < src[row_index].count do
       check = src[row_index][element_index]
-#      binding.pry
+      if low > check
+        low = check
+      end  
       element_index += 1  
     end
     row_index += 1
